@@ -1,0 +1,207 @@
+[gd_scene load_steps=16 format=3 uid="uid://c88xfp0i458j"]
+
+[ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_j16tf"]
+[ext_resource type="Texture2D" uid="uid://cl4yyoa55dao2" path="res://goolplin pf.png" id="2_tsl6d"]
+[ext_resource type="Texture2D" uid="uid://di4l7s8g6cl55" path="res://dimond pixel art from google.png" id="4_slahj"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rqlkf"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8sfpg"]
+texture = SubResource("CompressedTexture2D_rqlkf")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+6:2/0 = 0
+7:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+6:3/0 = 0
+7:3/0 = 0
+5:0/0 = 0
+7:0/0 = 0
+6:1/0 = 0
+5:1/0 = 0
+6:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_u6atp"]
+sources/0 = SubResource("TileSetAtlasSource_8sfpg")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_50g0c"]
+size = Vector2(646.5, 669)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_agnfd"]
+radius = 361.199
+
+[sub_resource type="Gradient" id="Gradient_4oxbo"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0.574237, 0.583068, 0.916677, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ve54w"]
+gradient = SubResource("Gradient_4oxbo")
+fill_from = Vector2(0.449541, 0.00917431)
+fill_to = Vector2(0.568807, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2pj8"]
+size = Vector2(3287.75, 249)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4yn5y"]
+radius = 30.4138
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cx3ex"]
+size = Vector2(224.448, 64.1732)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mdw17"]
+size = Vector2(394.618, 363.724)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_36ojk"]
+size = Vector2(8773, 290)
+
+[node name="Node2D" type="Node2D"]
+texture_filter = 1
+position = Vector2(496, -38)
+metadata/_edit_horizontal_guides_ = []
+metadata/_edit_vertical_guides_ = [-567.0]
+
+[node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
+position = Vector2(-647, 483)
+scale = Vector2(5, 5)
+tile_set = SubResource("TileSet_u6atp")
+format = 2
+layer_0/tile_data = PackedInt32Array(-262138, 327680, 2)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(286, 181)
+rotation = -6.28319
+script = ExtResource("1_j16tf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(432.75, -232.5)
+shape = SubResource("RectangleShape2D_50g0c")
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+rotation = -6.28319
+collision_layer = 0
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+position = Vector2(424, -265)
+rotation = -6.28319
+shape = SubResource("CircleShape2D_agnfd")
+
+[node name="LayerPoints" type="CanvasLayer" parent="CharacterBody2D"]
+
+[node name="Label" type="Label" parent="CharacterBody2D/LayerPoints"]
+anchors_preset = -1
+anchor_left = 0.232
+anchor_top = -0.138
+anchor_right = 0.232
+anchor_bottom = -0.138
+offset_left = 316.736
+offset_top = 110.424
+offset_right = 372.736
+offset_bottom = 133.424
+text = "Points:"
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(434.061, -213)
+scale = Vector2(2.54455, 2.71349)
+texture = ExtResource("2_tsl6d")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D"]
+rotation = -6.28319
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-2104, -356)
+scale = Vector2(51.3828, 3.84375)
+texture = SubResource("GradientTexture2D_ve54w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-2102.88, -356.5)
+shape = SubResource("RectangleShape2D_g2pj8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/CollisionShape2D"]
+
+[node name="apples" type="StaticBody2D" parent="." groups=["Collectable"]]
+
+[node name="Sprite2D" type="Sprite2D" parent="apples" groups=["Collectable"]]
+position = Vector2(171, 219)
+rotation = -6.28319
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("4_slahj")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="apples" groups=["Collectable"]]
+position = Vector2(176, 220)
+rotation = -6.28319
+shape = SubResource("CircleShape2D_4yn5y")
+
+[node name="Sprite2D2" type="Sprite2D" parent="apples"]
+position = Vector2(286, 181)
+rotation = -6.28319
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(447, 411)
+scale = Vector2(51.0469, 3.96875)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3"]
+position = Vector2(-10.8038, 6.04724)
+scale = Vector2(2.68901, 1.18898)
+texture = SubResource("GradientTexture2D_ve54w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(-3.34366, 108.85)
+shape = SubResource("RectangleShape2D_cx3ex")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(959, -93)
+rotation = 3.14159
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+position = Vector2(-1941, 587.963)
+scale = Vector2(37.1369, -4.71812)
+texture = SubResource("GradientTexture2D_ve54w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-1943.75, 586.997)
+scale = Vector2(6.02735, -0.824802)
+shape = SubResource("RectangleShape2D_mdw17")
+one_way_collision = true
+
+[node name="apples2" type="StaticBody2D" parent="." groups=["GameOver"]]
+position = Vector2(-317, 846)
+
+[node name="Sprite2D" type="Sprite2D" parent="apples2" groups=["GameOver"]]
+position = Vector2(1023, -7)
+scale = Vector2(21.8873, 0.260841)
+texture = ExtResource("4_slahj")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="apples2" groups=["GameOver"]]
+position = Vector2(211.5, -410)
+shape = SubResource("RectangleShape2D_36ojk")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(489, -746)
+zoom = Vector2(0.08, 0.08)
+position_smoothing_enabled = true
+position_smoothing_speed = 2.0
+
+[connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
