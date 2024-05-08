@@ -131,15 +131,13 @@ rotation = -6.28319
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(-2081, -869)
+position = Vector2(-2104, -356)
 scale = Vector2(51.3828, 3.84375)
 texture = SubResource("GradientTexture2D_ve54w")
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-2077, -858)
+position = Vector2(-2102.88, -356.5)
 shape = SubResource("RectangleShape2D_g2pj8")
-metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/CollisionShape2D"]
 
