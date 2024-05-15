@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c88xfp0i458j"]
+[gd_scene load_steps=17 format=3 uid="uid://c88xfp0i458j"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_j16tf"]
 [ext_resource type="Texture2D" uid="uid://cl4yyoa55dao2" path="res://goolplin pf.png" id="2_tsl6d"]
@@ -63,14 +63,17 @@ size = Vector2(3287.75, 249)
 [sub_resource type="CircleShape2D" id="CircleShape2D_4yn5y"]
 radius = 30.4138
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cx3ex"]
-size = Vector2(286.012, 906.205)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_36ojk"]
+size = Vector2(8773, 290)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mdw17"]
 size = Vector2(394.618, 363.724)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_36ojk"]
-size = Vector2(8773, 290)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cx3ex"]
+size = Vector2(286.012, 906.205)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p62hl"]
+size = Vector2(17135, 1371)
 
 [node name="Node2D" type="Node2D"]
 texture_filter = 1
@@ -96,6 +99,7 @@ position = Vector2(432.75, -232.5)
 shape = SubResource("RectangleShape2D_50g0c")
 
 [node name="Area2D" type="Area2D" parent="CharacterBody2D"]
+position = Vector2(6.99952, 107)
 rotation = -6.28319
 collision_layer = 0
 collision_mask = 9
@@ -125,9 +129,6 @@ position = Vector2(434.061, -213)
 scale = Vector2(2.54455, 2.71349)
 texture = ExtResource("2_tsl6d")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D"]
-rotation = -6.28319
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
@@ -146,13 +147,13 @@ metadata/_edit_group_ = true
 [node name="apples" type="StaticBody2D" parent="." groups=["Collectable"]]
 
 [node name="Sprite2D" type="Sprite2D" parent="apples" groups=["Collectable"]]
-position = Vector2(171, 219)
+position = Vector2(267, 389)
 rotation = -6.28319
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("4_slahj")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="apples" groups=["Collectable"]]
-position = Vector2(176, 220)
+position = Vector2(292, 445)
 rotation = -6.28319
 shape = SubResource("CircleShape2D_4yn5y")
 
@@ -169,10 +170,10 @@ position = Vector2(-10.8038, 6.04724)
 scale = Vector2(2.68901, 1.18898)
 texture = SubResource("GradientTexture2D_ve54w")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2(0.88155, 959.307)
-scale = Vector2(1, 1)
-shape = SubResource("RectangleShape2D_cx3ex")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D3" groups=["GameOver"]]
+position = Vector2(-10.7548, 5.29134)
+scale = Vector2(0.0195898, 0.251969)
+shape = SubResource("RectangleShape2D_36ojk")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(959, -93)
@@ -193,18 +194,26 @@ one_way_collision = true
 position = Vector2(-317, 846)
 
 [node name="Sprite2D" type="Sprite2D" parent="apples2" groups=["GameOver"]]
-position = Vector2(1311, 5842)
-scale = Vector2(21.8873, 0.260841)
+position = Vector2(858, 3280)
+scale = Vector2(21.8873, 1.10166)
 texture = ExtResource("4_slahj")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="apples2" groups=["GameOver"]]
-position = Vector2(226, -411)
-shape = SubResource("RectangleShape2D_36ojk")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="apples2"]
+position = Vector2(-30827, 6410)
+scale = Vector2(51.0469, 3.96875)
+shape = SubResource("RectangleShape2D_cx3ex")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(489, -746)
 zoom = Vector2(0.08, 0.08)
 position_smoothing_enabled = true
 position_smoothing_speed = 2.0
+
+[node name="Area2D" type="Area2D" parent="." groups=["GameOver"]]
+position = Vector2(-404, 2799)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["GameOver"]]
+position = Vector2(974, 816)
+shape = SubResource("RectangleShape2D_p62hl")
 
 [connection signal="body_entered" from="CharacterBody2D/Area2D" to="CharacterBody2D" method="_on_area_2d_body_entered"]
