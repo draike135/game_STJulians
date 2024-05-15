@@ -61,7 +61,7 @@ fill_to = Vector2(0.568807, 1)
 size = Vector2(3287.75, 249)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4yn5y"]
-radius = 30.4138
+radius = 47.1699
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_36ojk"]
 size = Vector2(8773, 290)
@@ -132,13 +132,21 @@ texture = ExtResource("2_tsl6d")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+<<<<<<< Updated upstream
 position = Vector2(-2081, -869)
+=======
+position = Vector2(-1768, -1154)
+>>>>>>> Stashed changes
 scale = Vector2(51.3828, 3.84375)
 texture = SubResource("GradientTexture2D_ve54w")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+<<<<<<< Updated upstream
 position = Vector2(-2077, -858)
+=======
+position = Vector2(-1765, -1149)
+>>>>>>> Stashed changes
 shape = SubResource("RectangleShape2D_g2pj8")
 metadata/_edit_group_ = true
 
@@ -153,7 +161,11 @@ scale = Vector2(0.15, 0.15)
 texture = ExtResource("4_slahj")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="apples" groups=["Collectable"]]
+<<<<<<< Updated upstream
 position = Vector2(292, 445)
+=======
+position = Vector2(170, 215)
+>>>>>>> Stashed changes
 rotation = -6.28319
 shape = SubResource("CircleShape2D_4yn5y")
 
@@ -170,30 +182,37 @@ position = Vector2(-10.8038, 6.04724)
 scale = Vector2(2.68901, 1.18898)
 texture = SubResource("GradientTexture2D_ve54w")
 
+<<<<<<< Updated upstream
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D3" groups=["GameOver"]]
 position = Vector2(-10.7548, 5.29134)
 scale = Vector2(0.0195898, 0.251969)
 shape = SubResource("RectangleShape2D_36ojk")
+=======
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(-3.15396, 341.417)
+shape = SubResource("RectangleShape2D_cx3ex")
+>>>>>>> Stashed changes
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(959, -93)
 rotation = 3.14159
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
-position = Vector2(-1941, 587.963)
+position = Vector2(-1493, 481.995)
 scale = Vector2(37.1369, -4.71812)
 texture = SubResource("GradientTexture2D_ve54w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(-1943.75, 586.997)
+position = Vector2(-1505, 479.987)
 scale = Vector2(6.02735, -0.824802)
 shape = SubResource("RectangleShape2D_mdw17")
 one_way_collision = true
 
 [node name="apples2" type="StaticBody2D" parent="." groups=["GameOver"]]
-position = Vector2(-317, 846)
+position = Vector2(-327, 1778)
 
 [node name="Sprite2D" type="Sprite2D" parent="apples2" groups=["GameOver"]]
+<<<<<<< Updated upstream
 position = Vector2(858, 3280)
 scale = Vector2(21.8873, 1.10166)
 texture = ExtResource("4_slahj")
@@ -202,6 +221,15 @@ texture = ExtResource("4_slahj")
 position = Vector2(-30827, 6410)
 scale = Vector2(51.0469, 3.96875)
 shape = SubResource("RectangleShape2D_cx3ex")
+=======
+position = Vector2(686, 3)
+scale = Vector2(19.8982, 0.260841)
+texture = ExtResource("4_slahj")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="apples2" groups=["GameOver"]]
+position = Vector2(240, -1343)
+shape = SubResource("RectangleShape2D_36ojk")
+>>>>>>> Stashed changes
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(489, -746)
