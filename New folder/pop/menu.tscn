@@ -1,11 +1,15 @@
-[gd_scene format=3 uid="uid://cp2xni1udp13f"]
+[gd_scene load_steps=2 format=3 uid="uid://cp2xni1udp13f"]
+
+[ext_resource type="Script" path="res://Button.gd" id="1_qdqmg"]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Button" type="Button" parent="."]
-offset_left = 153.0
-offset_top = 152.0
-offset_right = 194.0
-offset_bottom = 183.0
-scale = Vector2(16.0858, 8.65911)
-text = "Play"
+offset_left = 423.0
+offset_top = 358.0
+offset_right = 560.0
+offset_bottom = 407.0
+text = "PLAY"
+script = ExtResource("1_qdqmg")
+
+[connection signal="button_down" from="Button" to="Button" method="_on_button_down"]

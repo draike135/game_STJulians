@@ -1,6 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://c88xfp0i458j"]
+[gd_scene load_steps=18 format=3 uid="uid://c88xfp0i458j"]
 
 [ext_resource type="Script" path="res://CharacterBody2D.gd" id="1_j16tf"]
+[ext_resource type="Texture2D" uid="uid://cum4i432a2tcm" path="res://pixil-frame-0 (2).png" id="1_lr3ad"]
 [ext_resource type="Texture2D" uid="uid://cl4yyoa55dao2" path="res://goolplin pf.png" id="2_tsl6d"]
 [ext_resource type="Texture2D" uid="uid://di4l7s8g6cl55" path="res://dimond pixel art from google.png" id="4_slahj"]
 
@@ -80,6 +81,11 @@ texture_filter = 1
 position = Vector2(496, -38)
 metadata/_edit_horizontal_guides_ = []
 metadata/_edit_vertical_guides_ = [-567.0]
+
+[node name="Pixil-frame-0(2)" type="Sprite2D" parent="."]
+position = Vector2(487, -479.406)
+scale = Vector2(17.9975, 10.641)
+texture = ExtResource("1_lr3ad")
 
 [node name="TileMap" type="TileMap" parent="."]
 texture_filter = 1
